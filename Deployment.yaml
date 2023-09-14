@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+   name: devops
+spec:
+   replicas: 2
+   selector:      # tells the controller which pods to watch/belong to
+    matchLabels:
+     app: devops
+   template:
+      metadata:
+        labels:
+          app: devops
+      spec:
+       containers:
+        - name: devops
+          image: markhor1995/jenkins-k8s-demo
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
