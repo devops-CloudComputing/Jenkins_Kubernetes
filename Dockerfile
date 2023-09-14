@@ -7,7 +7,7 @@ WORKDIR /var/www/html
 RUN unzip photogenic.zip && rm photogenic.zip
 
 # Expose port 80 for HTTP
-EXPOSE 80
+EXPOSE 80 22
 
 # Start Apache HTTP Server
 CMD ["httpd", "-D", "FOREGROUND"]
